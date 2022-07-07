@@ -1,5 +1,6 @@
 import { Card } from "react-bootstrap";
 import styled from "styled-components";
+import Map from "../../components/Map";
 
 const Messages = ({ message }) => {
   return (
@@ -10,6 +11,16 @@ const Messages = ({ message }) => {
       <Card.Body>
         <div>{message.text}</div>
         {message.imageURL && <Image src={message.imageURL} alt="" />}
+        {message.location && (
+          <div>
+            <Map
+              center={{
+                lat: message.location.latitude,
+                lng: message.location.longitude,
+              }}
+            />
+          </div>
+        )}
       </Card.Body>
     </Card>
   );

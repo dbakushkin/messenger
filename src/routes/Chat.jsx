@@ -31,6 +31,7 @@ const Chat = () => {
       text: data.text,
       chatId,
       imageURL: data.imageURL,
+      location: data.location,
     };
     dispatch(submitForm(message));
   };
