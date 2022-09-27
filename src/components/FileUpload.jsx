@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { useEffect } from "react";
-import { FormControl, Spinner } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
+import FormControl from "react-bootstrap/FormControl";
 import api from "../helpers/api";
 
 const FileUpload = ({ onUpload, value }) => {
