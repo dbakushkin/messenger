@@ -1,8 +1,7 @@
 import { useState } from "react";
-import Spinner from "react-bootstrap/spinner"
+import Spinner from "react-bootstrap/Spinner";
+import Button from "react-bootstrap/Button";
 
-
-import Button from "react-bootstrap/Button"
 const options = {
   enableHighAccuracy: true,
   timeout: 5000,
@@ -10,34 +9,31 @@ const options = {
 };
 
 const Location = ({ onChange, value }) => {
-
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
-
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const onSuccess = (pos) => {
-    setLoading(false)
+    setLoading(false);
     console.log(pos);
     onChange(pos.coords);
   };
 
   const onError = (err) => {
-    setLoading(false)
-    setError(true)
+    setLoading(false);
+    setError(true);
     console.log(err);
   };
   const handleClick = () => {
-    setLoading(true)
+    setLoading(true);
     navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
   };
   return (
-    <Button type="button" variant = "outline-primary" onClick={handleClick}>
+    <Button type="button" variant="outline-primary" onClick={handleClick}>
       Определить положение
-      {loading && <Spinner className="ms-2" animation = "border" size = "sm"/> }
+      {loading && <Spinner className="ms-2" animation="border" size="sm" />}
       {value && <span>✅</span>}
       {error && <span>❌Ошибка определения координат</span>}
     </Button>
-    
   );
 };
 
