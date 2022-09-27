@@ -25,14 +25,14 @@ const FileUpload = ({ onUpload, value }) => {
   return (
     <div>
       {value && <span className="me-2">✅</span>}
-      {loading && (
+      {/* {loading && (
         <Spinner
           className="me-2"
           variant="primary"
           animation="border"
           size="sm"
         />
-      )}
+      )} */}
       <FormControl type="file" onChange={handleChange} ref={fileRef} />;
     </div>
   );
