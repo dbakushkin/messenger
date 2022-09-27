@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import FormControl from "react-bootstrap/FormControl";
+import FormControl from "react-bootstrap/Form";
 import api from "../helpers/api";
 
 const FileUpload = ({ onUpload, value }) => {
@@ -25,14 +25,14 @@ const FileUpload = ({ onUpload, value }) => {
   return (
     <div>
       {value && <span className="me-2">✅</span>}
-      {/* {loading && (
+      {loading && (
         <Spinner
           className="me-2"
           variant="primary"
           animation="border"
           size="sm"
         />
-      )} */}
+      )}
       <FormControl type="file" onChange={handleChange} ref={fileRef} />;
     </div>
   );
